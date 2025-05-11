@@ -1,0 +1,42 @@
+#-----------------------------------------------------------
+# Vivado v2024.1.2 (64-bit)
+# SW Build 5164865 on Thu Sep  5 14:37:11 MDT 2024
+# IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
+# SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
+# Start of session at: Tue Oct 29 21:37:11 2024
+# Process ID: 5612
+# Current directory: D:/Vivado Projects/vending_machine
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14060 D:\Vivado Projects\vending_machine\vending_machine.xpr
+# Log file: D:/Vivado Projects/vending_machine/vivado.log
+# Journal file: D:/Vivado Projects/vending_machine\vivado.jou
+# Running On        :Mi_NB_Ultra
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :11th Gen Intel(R) Core(TM) i5-11320H @ 3.20GHz
+# CPU Frequency     :3187 MHz
+# CPU Physical cores:4
+# CPU Logical cores :8
+# Host memory       :16952 MB
+# Swap memory       :3087 MB
+# Total Virtual     :20039 MB
+# Available Virtual :12573 MB
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Vivado Projects/vending_machine/vending_machine.xpr}
+update_compile_order -fileset sources_1
+file mkdir D:/Vivado Projects/vending_machine/vending_machine.srcs/constrs_1
+file mkdir D:/Vivado Projects/vending_machine/vending_machine.srcs/constrs_1
+add_files -fileset constrs_1 -norecurse {{D:/Vivado Projects/boolean.xdc}}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+export_ip_user_files -of_objects  [get_files {{D:/Vivado Projects/boolean.xdc}}] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 {{D:/Vivado Projects/boolean.xdc}}
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list {an[3]} {an[2]} {an[1]} {an[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {led[7]} {led[6]} {led[5]} {led[4]} {led[3]} {led[2]} {led[1]} {led[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg[6]} {seg[5]} {seg[4]} {seg[3]} {seg[2]} {seg[1]} {seg[0]}]]
+set_property IOSTANDARD LVTTL [get_ports [list {sw[7]} {sw[6]} {sw[5]} {sw[4]} {sw[3]} {sw[2]} {sw[1]} {sw[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {sw[7]} {sw[6]} {sw[5]} {sw[4]} {sw[3]} {sw[2]} {sw[1]} {sw[0]}]]
+set_property package_pin "" [get_ports [list  clk]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list btnC]]
